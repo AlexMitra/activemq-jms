@@ -14,11 +14,11 @@ spring:
       ticket-for-processing: jms.topic.ticketForProcessing
       ticket-processed: jms.topic.ticketProcessed
   jms:
-#    listener:
-#      acknowledge-mode: auto
-#      auto-startup: true
-#      concurrency: 1
-#      max-concurrency: 10
+    listener:
+      acknowledge-mode: auto
+      auto-startup: true
+      concurrency: 1
+      max-concurrency: 1
     pub-sub-domain: true
     template:
 #      find info about properties
