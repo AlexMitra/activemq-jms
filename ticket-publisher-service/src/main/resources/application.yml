@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ticket-publisher
+  activemq:
+    broker-url: tcp://localhost:61616
+    username: admin
+    password: admin
+    packages:
+      trust-all: true
+    topic:
+      ticket-for-processing: jms.topic.ticketForProcessing
+      ticket-processed: jms.topic.ticketProcessed
+  jms:
+#    listener:
+#      acknowledge-mode: auto
+#      auto-startup: true
+#      concurrency: 1
+#      max-concurrency: 10
+    pub-sub-domain: true
+    template:
+#      find info about properties
+      default-destination:
+      delivery-mode: persistent
+      priority: 100
+      qos-enabled: true
+      receive-timeout: 1000
+      time-to-live: 3600000
