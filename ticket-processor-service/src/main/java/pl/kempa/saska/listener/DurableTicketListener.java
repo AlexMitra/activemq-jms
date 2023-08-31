@@ -6,14 +6,14 @@ import org.springframework.messaging.Message;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.support.MessageBuilder;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 import pl.kempa.saska.dto.ProcessedTicketDTO;
 import pl.kempa.saska.dto.TicketDTO;
 import pl.kempa.saska.dto.TicketState;
 
-@Service
+@Component
 @Slf4j
 public class DurableTicketListener {
 

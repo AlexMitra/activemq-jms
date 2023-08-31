@@ -13,6 +13,7 @@ spring:
     topic:
       ticket-for-processing: jms.topic.ticketForProcessing
       ticket-processed: jms.topic.ticketProcessed
+      virtual-topic: super-scaling-topic
   jms:
     listener:
       acknowledge-mode: auto

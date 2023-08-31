@@ -8,10 +8,10 @@ import pl.kempa.saska.dto.TicketDTO;
 
 @Component
 @Slf4j
-public class NonDurableTicketListener {
-	@JmsListener(containerFactory = "nonDurableListenerContainerFactory",
-			destination = "${spring.activemq.topic.ticket-for-processing}")
+public class VirtualTopicListenerA {
+
+	@JmsListener(destination = "Consumer.A.VirtualTopic." + "${spring.activemq.topic.virtual-topic}")
 	public void onReceive(TicketDTO ticketDTO) {
-		log.info("[NON-DURABLE RECEIVER] Received ticket {}, begin processing ...", ticketDTO);
+		log.info("LISTENER [A] Received ticket {}", ticketDTO);
 	}
 }

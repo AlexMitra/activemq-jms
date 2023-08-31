@@ -9,21 +9,14 @@ import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import pl.kempa.saska.dto.TicketDTO;
-import pl.kempa.saska.service.PublisherService;
+import pl.kempa.saska.service.PublisherWithReplyService;
 
 @Service
 @AllArgsConstructor
 @Slf4j
-public class TicketPublisherService implements PublisherService<TicketDTO> {
+public class TicketPublisherWithReplyService implements PublisherWithReplyService<TicketDTO> {
 
 	private JmsTemplate jmsTemplate;
-
-	@Override
-	public void send(TicketDTO ticketDTO, String destination) {
-//		log.info("!!! Sending ticket for Virtual topic consumers: {}", ticketDTO);
-//		jmsTemplate.convertAndSend(destination, ticketDTO);
-		throw new UnsupportedOperationException("Method is not supported");
-	}
 
 	@Override
 	public void sendWithReply(TicketDTO ticketDTO, String destination, String replyDestination) {

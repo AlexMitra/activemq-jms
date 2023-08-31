@@ -3,12 +3,12 @@ package pl.kempa.saska.listener;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 import pl.kempa.saska.dto.ProcessedTicketDTO;
 
-@Service
+@Component
 @Slf4j
 public class ProcessedTicketReceiver {
 

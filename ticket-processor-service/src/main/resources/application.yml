@@ -12,6 +12,7 @@ spring:
       trust-all: true
     topic:
       ticket-for-processing: jms.topic.ticketForProcessing
+      virtual-topic: super-scaling-topic
   jms:
     listener:
       acknowledge-mode: auto
